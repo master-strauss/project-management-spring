@@ -20,12 +20,15 @@ import com.jrp.pma.springexample.Car;
 @Controller
 public class HomeController {
 
-	@Value("${app.version}")
+	@Value("${version}")
 	private String ver;
 
 	/**
-	 * Spring container injects an autocreated instance of the project repository
+	 * Spring container injects an auto-created instance of the project repository
 	 * Spring Framework creates an instance of the interface ProjectRepository
+	 * 
+	 * Instance of Car will be injected by the SpringFramework, dont have to use
+	 * Car car = new Car(); below.
 	 */
 
 	@Autowired

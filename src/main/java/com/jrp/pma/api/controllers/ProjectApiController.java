@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jrp.pma.dao.ProjectRepository;
 import com.jrp.pma.entities.Project;
 
+/**
+ * Controllers related to REST API controller to return data
+ */
 @RestController
 @RequestMapping("/app-api/projects")
 public class ProjectApiController {

@@ -22,6 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jrp.pma.dao.EmployeeRepository;
 import com.jrp.pma.entities.Employee;
 
+/**
+ * Controllers related to REST API controller to return data
+ */
 @RestController
 @RequestMapping("/app-api/employees")
 public class EmployeeApiController {
@@ -78,6 +81,7 @@ public class EmployeeApiController {
 		}
 	}
 	
+	// To manage amount of records returned => PAGINATION
 	@GetMapping(params= {"page", "size"})
 	@ResponseStatus(HttpStatus.OK)
 	public Iterable<Employee> findPaginatedEmployees(@RequestParam("page") int page, 

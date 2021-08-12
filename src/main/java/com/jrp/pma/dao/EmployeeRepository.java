@@ -2,16 +2,22 @@ package com.jrp.pma.dao;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.jrp.pma.dto.EmployeeProject;
 import com.jrp.pma.entities.Employee;
 
-@RepositoryRestResource(collectionResourceRel="apiemployees", path="apiemployees")
-public interface EmployeeRepository extends CrudRepository<Employee, Long> {
+/**
+ * USE REST API TO RETURN DATA -> "http://localhost:8080/rest-api-employees/"
+ * @author cucul
+ *
+ */
+@RepositoryRestResource(collectionResourceRel="rest-api-employees", path="rest-api-employees")
+public interface EmployeeRepository extends PagingAndSortingRepository<Employee, Long> {
 
 	@Query(nativeQuery = true, value = "SELECT  e.first_name AS firstName, e.last_name AS lastName, "
 			+ "COUNT(pe.employee_id) AS projectCount FROM employee e "
@@ -21,7 +27,7 @@ public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 
 	public Employee findByEmail(String value);
 
-	public Iterable<Employee> findAll(Pageable pageAndSize);
+	public Page<Employee> findAll(Pageable pageAndSize);
 
 	public Employee findByEmployeeId(long theId);
 

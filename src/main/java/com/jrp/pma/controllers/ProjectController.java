@@ -22,6 +22,9 @@ import com.jrp.pma.services.ProjectService;
 @RequestMapping("/projects")
 public class ProjectController {
 
+	//Dont tie Controller class directly to repositories, use Service to handle 
+	// repositories.
+	
 	@Autowired
 	ProjectService proService;
 

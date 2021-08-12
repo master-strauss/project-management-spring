@@ -38,7 +38,7 @@ public class HttpRequestTest {
 		String result = this.restTemplate.getForObject(renderedHtml, String.class);
 		System.out.println("### result = " + result);
 		// application.properties version = 3.3.3
-		assertEquals(renderedHtml.contains("3.3.3"), true);
+		assertEquals(renderedHtml.contains("3.3.2"), true);
 //		assertEquals(renderedHtml.contains("0.0.1"), true);
 	}
 

@@ -29,7 +29,9 @@ public class SecurityController {
 
 	@PostMapping("/register/save")
 	public String saveUser(Model model, UserAccount user) {
+		//NB. Encrypt password from form input before saving to DB.
 		user.setPassword(bCryptEncoder.encode(user.getPassword()));
+		//Use repo to save to DB but change it to a service later like project and employee
 		accountRepo.save(user);
 
 		return "redirect:/";

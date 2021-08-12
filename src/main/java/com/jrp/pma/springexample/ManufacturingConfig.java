@@ -6,6 +6,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ManufacturingConfig {
 
+	/**
+	 * @Bean tells Spring this is a bean when application starts up
+	 */
 	@Bean
 	public Car newCar() {
 		Engine e = new Engine();
@@ -14,5 +17,4 @@ public class ManufacturingConfig {
 
 		return new Car(e, d, t);
 	}
-
 }

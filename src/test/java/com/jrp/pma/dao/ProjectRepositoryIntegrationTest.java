@@ -30,7 +30,7 @@ public class ProjectRepositoryIntegrationTest {
 	public void ifNewProjectSaved_thenSuccess() {
 		Project newProject = new Project("New Test Project", "COMPLETE", "Test Description");
 		proRepo.save(newProject);
-
+		System.out.println("### OUTPUT = "+proRepo.findAll().size());
 		assertEquals(5, proRepo.findAll().size());
 
 	}

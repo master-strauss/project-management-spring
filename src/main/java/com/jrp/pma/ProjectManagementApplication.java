@@ -8,10 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import com.jrp.pma.dao.EmployeeRepository;
 import com.jrp.pma.dao.ProjectRepository;
 //import org.springframework.context.annotation.Bean;
+import com.jrp.pma.springexample.Car;
+import com.jrp.pma.springexample.Doors;
+import com.jrp.pma.springexample.Engine;
+import com.jrp.pma.springexample.Tyres;
 
 //import com.jrp.pma.dao.EmployeeRepository;
 //import com.jrp.pma.dao.ProjectRepository;
@@ -31,6 +36,21 @@ public class ProjectManagementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectManagementApplication.class, args);
 	}
+	
+	/**
+	 * CAN DEFINE BEANS HERE
+	 * 
+	 * 	@Bean
+		public Car newCar() {
+			Engine e = new Engine();
+			Doors d = new Doors();
+			Tyres t = new Tyres();
+
+			return new Car(e, d, t);
+		}
+		
+	 *
+	 */
 
 //	/**
 //	 * Dummy data, bean and runner to populate Hibernate temp DB

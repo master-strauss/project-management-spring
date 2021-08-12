@@ -18,6 +18,9 @@ import com.jrp.pma.services.EmployeeService;
 @RequestMapping("/employees")
 public class EmployeeController {
 
+	//Dont tie Controller class directly to repositories, use Service to handle 
+	// repositories.
+	
 	@Autowired
 	EmployeeService employeeService;
 
